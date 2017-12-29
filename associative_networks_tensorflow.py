@@ -17,9 +17,9 @@ def generate_dataset(num_examples=1000, t='one'):
 	return (x.T, y.reshape(num_examples, 1))
 
 R = 500
-batch_size = 150
-hidden_units = 5
-iterations = 2000
+batch_size = 50
+hidden_units = 3
+iterations = 150
 input_units = 2
 output_units = 1
 models = 3
@@ -33,7 +33,7 @@ def define_variable(shape, name):
 	return tf.get_variable(name, shape, initializer=initializer, dtype=tf.float32)
 
 def nonlinear(x):
-	return tf.nn.sigmoid(x)
+	return tf.nn.relu(x)
 
 # layer ppty...
 class Layer:
